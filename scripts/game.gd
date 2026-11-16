@@ -59,11 +59,13 @@ func _on_button_3_pressed() -> void:
 	$VBoxContainer/Button3.text="counter at "+str(button2_counter)
 
 func _on_next_button_pressed() -> void:
-	dialogue_index+=1
-	if (dialogue_index==dialogue_line_count):
+	if (dialogue_index==(dialogue_line_count-1)):
 		handle_next_file()
 	else:
+		dialogue_index+=1
 		$ParkUI/RichTextLabel.text=dialogue_lines[dialogue_index]['text']
+	
+	
 func handle_next_file()->void:
 	file_index+=1
 	dialogue_index=0
@@ -83,12 +85,54 @@ func handle_next_file()->void:
 			$ParkUI/RichTextLabel.text=dialogue_lines[dialogue_index]['text']
 			if(file_index==(file_count-2)):
 				file_index+=1
-		else:
+		elif(dialogue[file_index]['file_type']==1):
 			$VBoxContainer.visible=true
 			$ParkUI/RichTextLabel/HBoxContainer/NextButton.disabled=true
-			if(dialogue[file_index]['file_type']==1):
-				dialogue_lines=dialogue[file_index]['choices']
-				$ParkUI/RichTextLabel.text=dialogue[file_index]['question']['text']
-				$VBoxContainer/Button.text=dialogue_lines[0]["text"]
-				$VBoxContainer/Button2.text=dialogue_lines[1]["text"]
+			dialogue_lines=dialogue[file_index]['choices']
+			$ParkUI/RichTextLabel.text=dialogue[file_index]['question']['text']
+			$VBoxContainer/Button.text=dialogue_lines[0]["text"]
+			$VBoxContainer/Button2.text=dialogue_lines[1]["text"]
 		
+
+
+func _on_back_button_pressed() -> void:
+	print("dialogue_index: "+str(dialogue_index))
+	print("file_index"+str(file_index))
+	if (dialogue_index==0):
+		handle_previous_file()
+	else:
+		dialogue_index-=1
+		$ParkUI/RichTextLabel.text=dialogue_lines[dialogue_index]['text']
+
+
+func _on_history_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_settings_button_pressed() -> void:
+	pass # Replace with function body.
+
+func handle_previous_file()-> void:
+	print(file_count)
+	if(file_index==(file_count-1)):
+		file_index-=1
+	if file_index==0 and dialogue_index==0:
+		#$ParkUI/RichTextLabel.text="end of the game"
+		#$ParkUI/RichTextLabel/HBoxContainer/BackButton.disabled=true
+		print("we're in the beginning of the file")
+	else:
+		file_index-=1
+		if(dialogue[file_index]['file_type']==0):
+			$VBoxContainer.visible=false
+			$ParkUI/RichTextLabel/HBoxContainer/NextButton.disabled=false
+			dialogue_lines=dialogue[file_index]['dialogue_lines']
+			dialogue_line_count=dialogue[file_index]['dialogue_lines'].size()
+			dialogue_index=dialogue_line_count-1
+			$ParkUI/RichTextLabel.text=dialogue_lines[dialogue_index]['text']
+		elif(dialogue[file_index]['file_type']==1):
+			$VBoxContainer.visible=true
+			$ParkUI/RichTextLabel/HBoxContainer/NextButton.disabled=true
+			dialogue_lines=dialogue[file_index]['choices']
+			$ParkUI/RichTextLabel.text=dialogue[file_index]['question']['text']
+			$VBoxContainer/Button.text=dialogue_lines[0]["text"]
+			$VBoxContainer/Button2.text=dialogue_lines[1]["text"]

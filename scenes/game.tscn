@@ -201,8 +201,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_evfwu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jyhfb")
 text = "Option3"
 
+[connection signal="pressed" from="ParkUI/RichTextLabel/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ParkUI/RichTextLabel/HBoxContainer/HistoryButton" to="." method="_on_history_button_pressed"]
+[connection signal="pressed" from="ParkUI/RichTextLabel/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ParkUI/RichTextLabel/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="toggled" from="ParkUI/RichTextLabel/HBoxContainer/NextButton" to="." method="_on_next_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

@@ -7,13 +7,13 @@
   "dialogue_lines": [
 	{
 	  "speaker": "narrator",
-	  "text": "this the final version B.",
+	  "text": "this the final version A(bad).",
 	  "expression": null,
 	  "voice_clip": null
 	},
 	{
 	  "speaker": "Yuki",
-	  "text": "final version B 2",
+	  "text": "final version A 2 which is bad",
 	  "expression": "annoyed",
 	  "side_image": "yuki_side_frown.png",
 	  "voice_clip": "vo_yuki_0101"
