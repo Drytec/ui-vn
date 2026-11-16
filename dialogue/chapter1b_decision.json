@@ -1,0 +1,44 @@
+{
+  "node_id": "chapter1_intro_01",
+  "background": "bg_classroom_morning",
+  "music": "track_slice_of_life",
+  "ambient_sound": "sfx_birds_chirping",
+  "file_type":1,
+  "question":{
+	  "speaker": "narrator",
+	  "text": "The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.",
+	  "expression": null,
+	  "voice_clip": null
+	},
+  "choices": [
+	{
+	  "text": "Blame the video games honestly.",
+	  "next_node": "chapter1_route_honest",
+	  "stat_changes": {
+		"yuki_affection": 1,
+		"energy": -10,
+		"final_decision":1
+	  }
+	},
+	{
+	  "text": "Lie and say you were studying.",
+	  "next_node": "chapter1_route_lie",
+	  "stat_changes": {
+		"yuki_affection": -1,
+		"deception": 1,
+		"final_decision":-1
+	  }
+	},
+	{
+	  "text": "Change the subject immediately.",
+	  "next_node": "chapter1_route_deflect",
+	  "stat_changes": {
+		"humor": 1
+	  }
+	}
+  ],
+  "on_complete_trigger": {
+	"flag_to_set": "met_yuki_morning",
+	"give_item": null
+  }
+}

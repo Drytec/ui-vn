@@ -3,6 +3,7 @@
   "background": "bg_classroom_morning",
   "music": "track_slice_of_life",
   "ambient_sound": "sfx_birds_chirping",
+"file_type":0,
   "dialogue_lines": [
 	{
 	  "speaker": "narrator",
@@ -23,34 +24,5 @@
 	  "expression": "default",
 	  "voice_clip": null
 	}
-  ],
-  "choices": [
-	{
-	  "text": "Blame the video games honestly.",
-	  "next_node": "chapter1_route_honest",
-	  "stat_changes": {
-		"yuki_affection": 1,
-		"energy": -10
-	  }
-	},
-	{
-	  "text": "Lie and say you were studying.",
-	  "next_node": "chapter1_route_lie",
-	  "stat_changes": {
-		"yuki_affection": -1,
-		"deception": 1
-	  }
-	},
-	{
-	  "text": "Change the subject immediately.",
-	  "next_node": "chapter1_route_deflect",
-	  "stat_changes": {
-		"humor": 1
-	  }
-	}
-  ],
-  "on_complete_trigger": {
-	"flag_to_set": "met_yuki_morning",
-	"give_item": null
-  }
+  ]
 }

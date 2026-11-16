@@ -165,6 +165,7 @@ bbcode_enabled = true
 text = "A taste of Night room"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=20418357]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -190,6 +191,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jyhfb")
 text = "park ON"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1640786465]
+visible = false
 custom_minimum_size = Vector2(512, 128)
 layout_mode = 2
 theme_override_constants/outline_size = 16
