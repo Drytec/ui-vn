@@ -40,14 +40,10 @@ func _on_button_pressed() -> void:
 	decision_list.append(dialogue_lines[0]["stat_changes"]["final_decision"])
 	handle_next_file()
 
-
 func _on_button_2_pressed() -> void:
 	final_decision+=dialogue_lines[1]["stat_changes"]["final_decision"]
 	decision_list.append(dialogue_lines[1]["stat_changes"]["final_decision"])
 	handle_next_file()
-
-func _on_button_3_pressed() -> void:
-	$VBoxContainer/Button3.text="counter at "
 
 func _on_next_button_pressed() -> void:
 	if (dialogue_index==(dialogue_line_count-1)):
@@ -78,8 +74,6 @@ func handle_previous_file()-> void:
 	if(file_index==(file_count-1)):
 		file_index-=1
 	if file_index==0 and dialogue_index==0:
-		#$ParkUI/RichTextLabel.text="end of the game"
-		#$ParkUI/RichTextLabel/HBoxContainer/BackButton.disabled=true
 		print("we're in the beginning of the file")
 	else:
 		file_index-=1
