@@ -25,7 +25,7 @@ func _ready() -> void:
 	dialogue_lines=dialogue[file_index]['dialogue_lines']
 	dialogue_line_count=dialogue[file_index]['dialogue_lines'].size()
 	$ParkUI/RichTextLabel.text=dialogue_lines[0]['text']
-	
+	$VBoxContainer.visible=false
 	#$ParkUI/RichTextLabel.visible_ratio=0.5
 
 

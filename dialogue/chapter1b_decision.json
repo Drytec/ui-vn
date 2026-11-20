@@ -12,7 +12,7 @@
 	},
   "choices": [
 	{
-	  "text": "Blame the video games honestly.",
+	  "text": "Go to the gym.",
 	  "next_node": "chapter1_route_honest",
 	  "stat_changes": {
 		"yuki_affection": 1,
@@ -21,7 +21,7 @@
 	  }
 	},
 	{
-	  "text": "Lie and say you were studying.",
+	  "text": "Stay Home.",
 	  "next_node": "chapter1_route_lie",
 	  "stat_changes": {
 		"yuki_affection": -1,
