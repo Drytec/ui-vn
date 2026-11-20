@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://c77cu1m2fgjse"]
 
 [ext_resource type="Script" uid="uid://drtahay01s1dm" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://c2qd801hbvhiw" path="res://images/character_a.png" id="3_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://2not4q43db4g" path="res://icons/settings.svg" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://c7fjnlwtoucxf" path="res://icons/arrow_forward.svg" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://b83j5w755qhvv" path="res://images/night-park.jpg" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d2jepejpci0w1" path="res://icons/arrow_back.svg" id="3_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dfeh8qdpw50ts" path="res://icons/history.svg" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bd0ong4henkp7" path="res://scenes/option_button.tscn" id="5_p57ef"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_gee14"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 content_margin_left = 64.0
@@ -48,6 +51,18 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_lnu2h")
 expand_mode = 2
+
+[node name="character_right" type="TextureRect" parent="ParkUI" unique_id=2019803187]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_gee14")
+
+[node name="character_left" type="TextureRect" parent="ParkUI" unique_id=1812706837]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 1024.0
+texture = ExtResource("3_0tnpc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ParkUI" unique_id=712349990]
 layout_mode = 1
@@ -127,7 +142,7 @@ theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = SubResource("FontVariation_u5sy4")
 theme_override_font_sizes/normal_font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_u5sy4")
-text = "Jgalq"
+text = "narrador"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=20418357]
 layout_mode = 1

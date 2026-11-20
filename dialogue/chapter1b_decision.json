@@ -8,6 +8,7 @@
 	  "speaker": "narrator",
 	  "text": "The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.",
 	  "expression": null,
+	  "side_image": "character_a.png",
 	  "voice_clip": null
 	},
   "choices": [

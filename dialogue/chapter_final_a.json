@@ -9,13 +9,21 @@
 	  "speaker": "narrator",
 	  "text": "this the final version A(bad).",
 	  "expression": null,
+	  "side_image": null,
 	  "voice_clip": null
 	},
 	{
 	  "speaker": "Yuki",
-	  "text": "final version A 2 which is bad",
+	  "text": "final version A 2 which is bad bad",
 	  "expression": "annoyed",
-	  "side_image": "yuki_side_frown.png",
+	  "side_image": "character_a.png",
+	  "voice_clip": "vo_yuki_0101"
+	},
+	{
+	  "speaker": "Yuki",
+	  "text": "final version A 3 which is bad bad bad",
+	  "expression": "annoyed",
+	  "side_image": "character_a.png",
 	  "voice_clip": "vo_yuki_0101"
 	}
   ]

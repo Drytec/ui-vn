@@ -9,19 +9,21 @@
 	  "speaker": "narrator",
 	  "text": "The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.The morning sun cut sharply through the classroom blinds, casting long golden stripes across the desk.The morning sun cut sharply through the.",
 	  "expression": null,
+	  "side_image": null,
 	  "voice_clip": null
 	},
 	{
 	  "speaker": "Yuki",
 	  "text": "Hey! Are you even listening to me? We're going to be late for the club fair!",
 	  "expression": "annoyed",
-	  "side_image": "yuki_side_frown.png",
+	  "side_image": "character_a.png",
 	  "voice_clip": "vo_yuki_0101"
 	},
 	{
 	  "speaker": "Player",
 	  "text": "Ah—sorry, Yuki. I stayed up way too late playing games again.",
 	  "expression": "default",
+	  "side_image": "character_b.png",
 	  "voice_clip": null
 	}
   ]
