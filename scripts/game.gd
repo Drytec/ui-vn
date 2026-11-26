@@ -19,6 +19,7 @@ var backgrounds: Dictionary = {}
 func _ready() -> void:
 	characters["character_a.png"] = load("res://images/character_a.png")
 	characters["character_b.png"] = load("res://images/character_b.png")
+	characters["character_phone_call.svg"] = load("res://images/character_phone_call.svg")
 
 	var loaded = file_functions.load_json_file("res://dialogue/story.json")
 	if typeof(loaded) == TYPE_DICTIONARY:

@@ -265,7 +265,7 @@
         {
           "speaker": "Mom (Phone Call)",
           "text": "\"Son... Grandpa passed away a couple of hours ago at the hospital. The funeral is the day after tomorrow back in town. We need you to come—the family has to be together.\"",
-          "side_image": null
+          "side_image": "character_phone_call.svg"
         },
         {
           "speaker": "Shae",
