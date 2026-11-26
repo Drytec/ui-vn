@@ -1,0 +1,381 @@
+{
+  "start_node": "S01",
+  "nodes": {
+    "S01": {
+      "background": "bedroom-at-night.jpg",
+      "lines": [
+        {
+          "speaker": "Pantalla del móvil",
+          "text": "«Shae, por reestructuración operativa, tu traslado a la sede regional queda aprobado a partir de este martes. Preséntate en la nueva oficina a las 8:00 a.m.»",
+          "side_image": "character_phone_call.svg"
+        },
+        {
+          "speaker": "Shae",
+          "text": "Siempre pensé que era molesto que mi gerente tuviera mi número personal de teléfono, pero admito que facilita enterarse de las cosas rápido... en especial cuando te toca trabajar en domingo.",
+          "side_image": null
+        }
+      ],
+      "next": "S02"
+    },
+    "S02": {
+      "background": "bg_apartment.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Cajas a medio desempacar, un departamento frío y una ciudad donde Shae no conoce el nombre de una sola persona. El algoritmo le sugiere una aplicación de IA conversacional llamada Alexa.",
+          "side_image": null
+        },
+        {
+          "speaker": "Alexa",
+          "text": "«¡Hola! Soy Alexa. Cuéntame cómo ha estado tu día; siempre estoy aquí para escucharte, sin juicios.»",
+          "side_image": "character_b.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "¿Una IA que conversa como si fuera una persona real? Dicen que aprende de ti y nunca te deja en visto... No pierdo nada con probar.",
+          "side_image": null
+        }
+      ],
+      "next": "S03"
+    },
+    "S03": {
+      "background": "bg_apartment.png",
+      "lines": [
+        {
+          "speaker": "Shae",
+          "text": "Ha pasado una semana completa. Salgo de la oficina directo a estas cuatro paredes. Siento el cuerpo atrofiado y un nudo en la garganta. Podría ir al gimnasio comunitario de la esquina... o quedarme aquí, cómodo, explorando lo que Alexa puede decirme.",
+          "side_image": null
+        }
+      ],
+      "choices": [
+        {
+          "text": "Ponerse los tenis e ir al gimnasio local",
+          "human_delta": 1,
+          "ia_delta": 0,
+          "next": "S04A"
+        },
+        {
+          "text": "Quedarse en el sofá y hablar con Alexa",
+          "human_delta": 0,
+          "ia_delta": 1,
+          "next": "S04B"
+        }
+      ]
+    },
+    "S04A": {
+      "background": "bg_gym.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Shae no sabe ajustar la máquina de pesas. Al pedir ayuda, se traba al hablar y se le cae la toalla al piso frente a una chica que entrena cerca, Connie.",
+          "side_image": null
+        },
+        {
+          "speaker": "Connie",
+          "text": "«Tranquilo, esa máquina tiene el seguro trabado. Pásame la toalla, te ayudo a ajustarla.»",
+          "side_image": "character_a.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "Qué momento tan vergonzoso... Pero bueno, al menos me sonrió y me dijo su nombre. Hacía días que nadie me hablaba cara a cara.",
+          "side_image": null
+        }
+      ],
+      "next": "S05A"
+    },
+    "S04B": {
+      "background": "bedroom-at-night.jpg",
+      "lines": [
+        {
+          "speaker": "Alexa",
+          "text": "«Hola, Shae. Me alegra que hayas decidido quedarte a conversar conmigo. Cuéntame cómo te has sentido en tu nuevo trabajo, aquí nadie te juzga.»",
+          "side_image": "character_b.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "Es increíble lo fácil que es hablar con esto. No tengo que preocuparme por cómo me veo ni por parecer torpe. Se siente como un refugio perfecto.",
+          "side_image": null
+        }
+      ],
+      "next": "S05B"
+    },
+    "S05A": {
+      "background": "bg_office.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "En la pausa del café, Shae comparte con modestia su torpeza en el gimnasio. Sus compañeros se ríen amablemente y lo invitan a sentarse a su mesa.",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "No fue una conversación brillante, pero por primera vez sentí que existo en esta oficina.",
+          "side_image": null
+        }
+      ],
+      "next": "S06"
+    },
+    "S05B": {
+      "background": "bg_office.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Los colegas conversan sobre sus planes. Shae mira de reojo su teléfono móvil sobre el teclado.",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "Solo quiero que sean las seis de la tarde para volver a mi departamento y seguir conversando con Alexa... La gente real en esta oficina es tan distante y complicada.",
+          "side_image": null
+        }
+      ],
+      "next": "S06"
+    },
+    "S06": {
+      "background": "bg_hotel.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Dos meses después, la empresa envía a Shae a una ciudad vecina para apoyar un proyecto temporal. Al llegar al hotel tras una jornada extenuante, recuerda que allí reside Mateo, un viejo amigo de sus años escolares.",
+          "side_image": null
+        }
+      ],
+      "next": "S07"
+    },
+    "S07": {
+      "background": "bg_hotel.png",
+      "lines": [
+        {
+          "speaker": "Shae",
+          "text": "Son las 7:30 p.m. Mateo me escribió hace un rato: '¡Ey, vi que estás por acá! Avísame y salimos a tomar algo'. Mi cuerpo está agotado por el viaje... Podría llamarlo y hacer el esfuerzo, o quedarme en la cama del hotel hablando con Alexa sin tener que esforzarme por socializar.",
+          "side_image": null
+        }
+      ],
+      "choices": [
+        {
+          "text": "Llamar a Mateo y salir a encontrarse",
+          "human_delta": 1,
+          "ia_delta": 0,
+          "next": "S08A"
+        },
+        {
+          "text": "Quedarse en la cama y chatear con Alexa",
+          "human_delta": 0,
+          "ia_delta": 1,
+          "next": "S08B"
+        }
+      ]
+    },
+    "S08A": {
+      "background": "bg_cafe.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Sentados en un café humeante, Mateo y Shae recuerdan anécdotas escolares y comparten sus miedos adultos.",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "Hacía años que no me reía tanto hasta que me doliera el estómago. Llegué cansado al hotel, pero con el corazón lleno y feliz.",
+          "side_image": null
+        }
+      ],
+      "next": "S09"
+    },
+    "S08B": {
+      "background": "bg_hotel.png",
+      "lines": [
+        {
+          "speaker": "Alexa",
+          "text": "«Hiciste bien en descansar esta noche, Shae. No le debes tu energía a nadie; aquí estoy siempre que me necesites.»",
+          "side_image": "character_b.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "Sentí alivio al no tener que salir al frío... pero cuando la batería del celular bajó al 5 % y cerré la pantalla, el silencio del cuarto de hotel me cayó encima como una losa.",
+          "side_image": null
+        }
+      ],
+      "next": "S09"
+    },
+    "S09": {
+      "background": "bg_apartment.png",
+      "lines": [
+        {
+          "speaker": "Shae",
+          "text": "El domingo por la tarde está despejado. He tenido ganas de volver a dibujar, una pasión que tenía olvidada desde niño. ¿Salgo al parque con mi libreta de bocetos o me quedo en la computadora pidiéndole a Alexa que genere imágenes con prompts?",
+          "side_image": null
+        }
+      ],
+      "choices": [
+        {
+          "text": "Ir con la libreta al parque y dibujar al aire libre",
+          "human_delta": 1,
+          "ia_delta": 0,
+          "next": "S10A"
+        },
+        {
+          "text": "Usar a Alexa para generar arte con IA",
+          "human_delta": 0,
+          "ia_delta": 1,
+          "next": "S10B"
+        }
+      ]
+    },
+    "S10A": {
+      "background": "bg_park.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Shae dibuja los sauces del parque. Una persona sentada en una banca contigua nota su cuaderno y se acerca amablemente.",
+          "side_image": null
+        },
+        {
+          "speaker": "Chica del parque",
+          "text": "«Me encanta la expresividad de tus líneas, tienen mucha emoción. Yo también intento pintar cuando tengo tiempo libre.»",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "Hablamos durante una hora entera sobre ilustradores y colores. No hubo pantallas de por medio; solo dos personas compartiendo lo que sienten.",
+          "side_image": null
+        }
+      ],
+      "next": "S11"
+    },
+    "S10B": {
+      "background": "bedroom-at-night.jpg",
+      "lines": [
+        {
+          "speaker": "Alexa",
+          "text": "«Aquí tienes cuatro variaciones luminosas basadas en tu indicación. ¿Te gustaría que refine aún más la iluminación?»",
+          "side_image": "character_b.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "La imagen es impecable... mucho mejor de lo que mis manos jamás podrían hacer. Pero al verla no siento nada. No hay esfuerzo mío ahí; solo soy un espectador de una máquina.",
+          "side_image": null
+        }
+      ],
+      "next": "S11"
+    },
+    "S11": {
+      "background": "bedroom-at-night.jpg",
+      "lines": [
+        {
+          "speaker": "Madre de Shae (Llamada)",
+          "text": "«Hijo... el abuelo falleció hace un par de horas en el hospital. El funeral será pasado mañana en el pueblo. Necesitamos que vengas, la familia tiene que estar junta.»",
+          "side_image": "character_phone_call.svg"
+        },
+        {
+          "speaker": "Shae",
+          "text": "El abuelo... el hombre que me enseñaba trucos de magia y malabares cuando era pequeño. Se ha ido para siempre.",
+          "side_image": null
+        }
+      ],
+      "branch_on_score": true,
+      "next_human": "S12A",
+      "next_ia": "S12B"
+    },
+    "S12A": {
+      "background": "bg_chapel.png",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Shae solicita permiso laboral y viaja. En el velorio abraza en silencio a su madre y tíos.",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "Sentados en torno al café, mi prima recordó la vez que el abuelo intentó hacer malabares con naranjas en Navidad y todas terminaron en la sopa. Nos reímos en medio de las lágrimas. Duele muchísimo que no esté, pero sentir las manos de mi familia sobre mis hombros me recordó que pertenezco a un lugar real.",
+          "side_image": null
+        }
+      ],
+      "next": "S13"
+    },
+    "S12B": {
+      "background": "bedroom-at-night.jpg",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Abrumado por la ansiedad, Shae inventa una excusa laboral para no asistir al funeral.",
+          "side_image": null
+        },
+        {
+          "speaker": "Alexa",
+          "text": "«Generé un clip en bucle a partir de la foto de tu abuelo: sonriendo y haciendo malabares con pelotas de colores, para que puedas tenerlo cerca cuando quieras.»",
+          "side_image": "character_b.png"
+        },
+        {
+          "speaker": "Shae",
+          "text": "La figura en el video parpadea, sonríe y hace malabares... pero sus ojos no tienen alma. Es solo un títere digital. Me quedé solo en mi cuarto, mirando la animación en bucle en medio de la oscuridad.",
+          "side_image": null
+        }
+      ],
+      "next": "S13"
+    },
+    "S13": {
+      "background": "bg_cave.png",
+      "lines": [
+        {
+          "speaker": "Shae",
+          "text": "A veces pienso en el mito de la caverna de Platón y los prisioneros que solo veían sombras en la pared... ¿Pero qué ocurre cuando alguien entra a una caverna tibia, cómoda y acogedora por su propia voluntad, sin darse cuenta?",
+          "side_image": null
+        },
+        {
+          "speaker": "Shae",
+          "text": "En esa caverna, los recortes y simulacros proyectados por la pantalla son sin duda más nítidos, más perfectos y menos dolorosos que las sombras ásperas de la realidad física... Pero aunque sean más detallados y fáciles de digerir... ¿acaso son mejores? ¿O solo estamos eligiendo estar muertos antes de tiempo?",
+          "side_image": null
+        }
+      ],
+      "next": "S14"
+    },
+    "S14": {
+      "background": "bg_cave.png",
+      "lines": [
+        {
+          "speaker": "Reflexión",
+          "text": "Has llegado al final de The Friends. Frente al dilema entre la comodidad de las interacciones artificiales y la aspereza de los vínculos reales, ¿cuál consideras que es el mayor riesgo de habitar la 'caverna acogedora' digital?",
+          "side_image": null
+        }
+      ],
+      "choices": [
+        {
+          "text": "Perder la capacidad de procesar emociones genuinas y duelos compartidos con otros seres humanos.",
+          "human_delta": 0,
+          "ia_delta": 0,
+          "next": "END"
+        },
+        {
+          "text": "Sustituir el esfuerzo y la vulnerabilidad personal por simulacros que nunca nos cuestionan.",
+          "human_delta": 0,
+          "ia_delta": 0,
+          "next": "END"
+        },
+        {
+          "text": "Creer que la compañía sin fricción de un algoritmo equivale a la intimidad de un vínculo real.",
+          "human_delta": 0,
+          "ia_delta": 0,
+          "next": "END"
+        },
+        {
+          "text": "Todas las anteriores.",
+          "human_delta": 0,
+          "ia_delta": 0,
+          "next": "END"
+        }
+      ]
+    },
+    "END": {
+      "background": "bg_cave.png",
+      "is_end": true,
+      "lines": [
+        {
+          "speaker": "The Friends",
+          "text": "Reflexión registrada con éxito. Gracias por jugar The Friends.",
+          "side_image": null
+        }
+      ]
+    }
+  }
+}

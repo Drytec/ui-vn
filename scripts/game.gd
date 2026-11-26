@@ -5,6 +5,9 @@ const option_button_scene = preload("res://scenes/option_button.tscn")
 
 var story_data: Dictionary = {}
 var story_nodes: Dictionary = {}
+var story_nodes_en: Dictionary = {}
+var story_nodes_es: Dictionary = {}
+var current_lang: String = "en"
 var current_node_id: String = "S01"
 var line_index: int = 0
 
@@ -21,13 +24,19 @@ func _ready() -> void:
 	characters["character_b.png"] = load("res://images/character_b.png")
 	characters["character_phone_call.svg"] = load("res://images/character_phone_call.svg")
 
-	var loaded = file_functions.load_json_file("res://dialogue/story.json")
-	if typeof(loaded) == TYPE_DICTIONARY:
-		story_data = loaded
-		story_nodes = story_data.get("nodes", {})
+	var loaded_en = file_functions.load_json_file("res://dialogue/story.json")
+	if typeof(loaded_en) == TYPE_DICTIONARY:
+		story_data = loaded_en
+		story_nodes_en = story_data.get("nodes", {})
 		current_node_id = story_data.get("start_node", "S01")
 
+	var loaded_es = file_functions.load_json_file("res://dialogue/story_es.json")
+	if typeof(loaded_es) == TYPE_DICTIONARY:
+		story_nodes_es = loaded_es.get("nodes", {})
+
+	story_nodes = story_nodes_en
 	$VBoxContainer.visible = false
+	_update_settings_ui()
 	_render_current()
 
 
@@ -174,7 +183,27 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_settings_button_pressed() -> void:
 	$SettingsMenu.visible = not $SettingsMenu.visible
-	_update_fullscreen_button_label()
+	_update_settings_ui()
+
+
+func _on_english_button_pressed() -> void:
+	_set_language("en")
+
+
+func _on_spanish_button_pressed() -> void:
+	_set_language("es")
+
+
+func _set_language(lang: String) -> void:
+	if lang == current_lang:
+		return
+	current_lang = lang
+	if current_lang == "es" and not story_nodes_es.is_empty():
+		story_nodes = story_nodes_es
+	else:
+		story_nodes = story_nodes_en
+	_update_settings_ui()
+	_render_current()
 
 
 func _on_resume_button_pressed() -> void:
@@ -193,7 +222,7 @@ func _on_fullscreen_button_pressed() -> void:
 		DisplayServer.window_set_position(usable.position + (usable.size - win_size) / 2)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	_update_fullscreen_button_label()
+	_update_settings_ui()
 
 
 func _on_minimize_button_pressed() -> void:
@@ -204,7 +233,21 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 
-func _update_fullscreen_button_label() -> void:
+func _update_settings_ui() -> void:
+	var vbox := $SettingsMenu/CenterContainer/PanelContainer/VBoxContainer
 	var current_mode := DisplayServer.window_get_mode()
 	var is_fs := current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN or current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
-	$SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/FullscreenButton.text = "Fullscreen: On" if is_fs else "Fullscreen: Off"
+	var is_es := current_lang == "es"
+
+	vbox.get_node("SettingsTitle").text = "Ajustes" if is_es else "Settings"
+	vbox.get_node("ResumeButton").text = "Continuar" if is_es else "Resume"
+	vbox.get_node("FullscreenButton").text = ("Pantalla completa: Activada" if is_fs else "Pantalla completa: Desactivada") if is_es else ("Fullscreen: On" if is_fs else "Fullscreen: Off")
+	vbox.get_node("MinimizeButton").text = "Minimizar" if is_es else "Minimize"
+	vbox.get_node("QuitButton").text = "Salir del juego" if is_es else "Quit Game"
+
+	var en_btn: Button = vbox.get_node("LanguageRow/EnglishButton")
+	var es_btn: Button = vbox.get_node("LanguageRow/SpanishButton")
+	en_btn.text = "English" if is_es else "• English"
+	es_btn.text = "• Español" if is_es else "Español"
+	en_btn.disabled = not is_es
+	es_btn.disabled = is_es

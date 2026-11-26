@@ -186,7 +186,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer" unique_id=1982001004]
 layout_mode = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 20
 
 [node name="SettingsTitle" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001005]
 layout_mode = 2
@@ -195,23 +195,37 @@ theme_override_font_sizes/font_size = 48
 text = "Settings"
 horizontal_alignment = 1
 
+[node name="LanguageRow" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001010]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="EnglishButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/LanguageRow" unique_id=1982001011 instance=ExtResource("5_p57ef")]
+custom_minimum_size = Vector2(270, 82)
+layout_mode = 2
+text = "English"
+
+[node name="SpanishButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/LanguageRow" unique_id=1982001012 instance=ExtResource("5_p57ef")]
+custom_minimum_size = Vector2(270, 82)
+layout_mode = 2
+text = "Español"
+
 [node name="ResumeButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001006 instance=ExtResource("5_p57ef")]
-custom_minimum_size = Vector2(560, 90)
+custom_minimum_size = Vector2(560, 82)
 layout_mode = 2
 text = "Resume"
 
 [node name="FullscreenButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001007 instance=ExtResource("5_p57ef")]
-custom_minimum_size = Vector2(560, 90)
+custom_minimum_size = Vector2(560, 82)
 layout_mode = 2
 text = "Fullscreen: On"
 
 [node name="MinimizeButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001009 instance=ExtResource("5_p57ef")]
-custom_minimum_size = Vector2(560, 90)
+custom_minimum_size = Vector2(560, 82)
 layout_mode = 2
 text = "Minimize"
 
 [node name="QuitButton" parent="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1982001008 instance=ExtResource("5_p57ef")]
-custom_minimum_size = Vector2(560, 90)
+custom_minimum_size = Vector2(560, 82)
 layout_mode = 2
 text = "Quit Game"
 
@@ -221,6 +235,8 @@ text = "Quit Game"
 [connection signal="pressed" from="ParkUI/RichTextLabel/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/LanguageRow/EnglishButton" to="." method="_on_english_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/LanguageRow/SpanishButton" to="." method="_on_spanish_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/MinimizeButton" to="." method="_on_minimize_button_pressed"]
