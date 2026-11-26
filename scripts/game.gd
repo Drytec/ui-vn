@@ -32,6 +32,7 @@ func _ready() -> void:
 	dialogue_lines=dialogue[file_index]['dialogue_lines']
 	dialogue_line_count=dialogue[file_index]['dialogue_lines'].size()
 	$ParkUI/RichTextLabel.text=dialogue_lines[0]['text']
+	$ParkUI/TextureRect.texture=load("res://images/"+dialogue[file_index]["background"])
 	$VBoxContainer.visible=false
 	#$ParkUI/RichTextLabel.visible_ratio=0.5
 
@@ -79,8 +80,47 @@ func _on_history_button_pressed() -> void:
 	pass # Replace with function body.
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		_on_settings_button_pressed()
+
+
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	$SettingsMenu.visible = not $SettingsMenu.visible
+	_update_fullscreen_button_label()
+
+
+func _on_resume_button_pressed() -> void:
+	$SettingsMenu.visible = false
+
+
+func _on_fullscreen_button_pressed() -> void:
+	var current_mode := DisplayServer.window_get_mode()
+	if current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN or current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		var screen := DisplayServer.window_get_current_screen()
+		var usable := DisplayServer.screen_get_usable_rect(screen)
+		var win_size := Vector2i(1280, 720)
+		DisplayServer.window_set_size(win_size)
+		DisplayServer.window_set_position(usable.position + (usable.size - win_size) / 2)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	_update_fullscreen_button_label()
+
+
+func _on_minimize_button_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _update_fullscreen_button_label() -> void:
+	var current_mode := DisplayServer.window_get_mode()
+	var is_fs := current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN or current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+	$SettingsMenu/CenterContainer/PanelContainer/VBoxContainer/FullscreenButton.text = "Fullscreen: On" if is_fs else "Fullscreen: Off"
 
 func handle_previous_file()-> void:
 	print(file_count)
